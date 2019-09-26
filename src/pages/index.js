@@ -1,14 +1,25 @@
 import React from "react"
-import Header from '../components/header';
-
-import { Link } from 'gatsby'
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import Post from "../components/Post"
+import { Container } from "react-bootstrap"
 
 const IndexPage = () => (
   <div>
-    <Header siteTitle={'jerry'}/>
-    <h1>First Gastby Project</h1>
-    <Link to='/test/'>Link to test</Link>
-    <img src="https://media.timeout.com/images/105170238/630/472/image.jpg" alt="gatsby"/>
+    <Header title={"Jerry-Blog"} />
+    <Container>
+      <div className="row justify-content-md-center">
+        <div className="col-xs-6">
+          <Post
+            cover={
+              "https://media.timeout.com/images/105170238/630/472/image.jpg"
+            }
+            title={"First Gastby Project"}
+          />
+        </div>
+      </div>
+    </Container>
+    <Footer />
   </div>
 )
 

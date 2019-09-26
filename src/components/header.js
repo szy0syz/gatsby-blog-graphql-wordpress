@@ -1,42 +1,41 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import {
+  Nav,
+  Form,
+  Navbar,
+  Button,
+  FormControl,
+} from "react-bootstrap"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+const Header = ({ title }) => (
+  <Navbar bg="light" expand="lg">
+    <Navbar.Brand href="#home">{title}</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="mr-auto">
+        <Nav.Link as={Link} to="/">
+          Home
+        </Nav.Link>
+        <Nav.Link as={Link} to="/about">
+          About
+        </Nav.Link>
+      </Nav>
+      <Form inline>
+        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <Button variant="outline-success">Search</Button>
+      </Form>
+    </Navbar.Collapse>
+  </Navbar>
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  title: ``,
 }
 
 export default Header

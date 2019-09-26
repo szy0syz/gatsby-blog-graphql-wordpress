@@ -14,3 +14,11 @@ import { Link } from 'gatsby'
 import { navigate } from "gatsby"
 <button onClick={() => navigate("/")}>Navigate to home</button>
 ```
+* CSS Global Styles
+  * src/styles/global.css
+  * 在/gatsby-browser.js 引入 `import "./src/styles/global.css"`
+  * 这样全局就生效了
+* Module CSS
+  * header.module.css
+  * 和 create-react-app 一样
+* bootstrap响应式里，不要固定的设置某个主体承载容器的宽高
